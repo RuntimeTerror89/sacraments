@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Living Sacraments – A Digital Guide for Thomasians</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a class="nav-logo" href="#" onclick="showPage('home')">☩ <span>Living</span> Sacraments</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#" onclick="showPage('home')">Home</a></li>
+    <li><a href="#" onclick="showPage('sacraments')">Sacraments</a></li>
+    <li><a href="#" onclick="showPage('thomasian')">Thomasian Corner</a></li>
+    <li><a href="#" onclick="showPage('about')">About</a></li>
+    <li><a href="#" onclick="showPage('feedback')" class="nav-cta">Feedback</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HOME PAGE
+═══════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <svg class="hero-cross" viewBox="0 0 100 100" fill="none">
+      <rect x="40" y="10" width="20" height="80" fill="white"/>
+      <rect x="10" y="38" width="80" height="24" fill="white"/>
+    </svg>
+    <div class="hero-content">
+      <div class="hero-badge">✦ UST Legazpi · Campus Ministry</div>
+      <h1>Living <em>Sacraments</em><br>A Digital Guide for Thomasians</h1>
+      <p class="hero-subtitle">Encounter Christ Through the Sacraments in Daily Life — A faith resource crafted for Catholic students aged 16–25.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#" onclick="showPage('sacraments')">✦ Explore the Sacraments</a>
+        <a class="btn btn-outline" href="#" onclick="document.getElementById('intro-anchor').scrollIntoView({behavior:'smooth'})">Learn More ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro" id="intro-anchor">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-text fade-in">
+          <div class="section-label">About This Guide</div>
+          <h2 class="section-title">Why We Created This Space</h2>
+          <p>The sacraments aren't just religious rituals — they are living encounters with Jesus Christ. This digital guide was born from the desire to help Thomasians connect their everyday lives with the deep grace offered through the seven sacraments of the Catholic Church.</p>
+          <p>Whether you're preparing to receive a sacrament, curious about your faith, or seeking a deeper relationship with God, this guide offers theology made accessible — grounded in Scripture, alive in community, and relevant to student life today.</p>
+          <a class="btn btn-gold" href="#" onclick="showPage('sacraments')" style="margin-top:1rem">Begin Your Journey →</a>
+        </div>
+        <div class="intro-verse fade-in">
+          <blockquote>"The sacraments are powers that come forth from the Body of Christ, which is ever-living and life-giving."</blockquote>
+          <cite>— Catechism of the Catholic Church, §1116</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SACRAMENTS PREVIEW -->
+  <section class="sacraments-section">
+    <div class="container">
+      <div class="section-label">The Seven Sacraments</div>
+      <h2 class="section-title">Channels of God's Grace</h2>
+      <p class="section-sub">Each sacrament is a sacred sign instituted by Christ to give grace. Explore all seven and discover how they shape your life today.</p>
+      <div class="cards-grid">
+        <div class="sacrament-card fade-in" onclick="showSacrament('baptism')">
+          <div class="card-icon">💧</div>
+          <div class="card-title">Baptism</div>
+          <div class="card-desc">The gateway to life in the Spirit and the first sacrament of initiation, freeing us from original sin.</div>
+          <a class="card-link" href="#">Explore Baptism →</a>
+        </div>
+        <div class="sacrament-card fade-in" onclick="showSacrament('eucharist')">
+          <div class="card-icon">🍞</div>
+          <div class="card-title">Eucharist</div>
+          <div class="card-desc">The source and summit of Christian life — the real presence of Christ in the bread and wine.</div>
+          <a class="card-link" href="#">Explore Eucharist →</a>
+        </div>
+        <div class="sacrament-card fade-in" onclick="showSacrament('confirmation')">
+          <div class="card-icon">🕊️</div>
+          <div class="card-title">Confirmation</div>
+          <div class="card-desc">Strengthened by the Holy Spirit to be bold witnesses of the Gospel in the world.</div>
+          <a class="card-link" href="#">Explore Confirmation →</a>
+        </div>
+        <div class="sacrament-card fade-in" onclick="showSacrament('reconciliation')">
+          <div class="card-icon">🙏</div>
+          <div class="card-title">Reconciliation</div>
+          <div class="card-desc">God's mercy made tangible — healing, forgiveness, and restoration of relationship with Christ.</div>
+          <a class="card-link" href="#">Explore Reconciliation →</a>
+        </div>
+        <div class="sacrament-card fade-in" onclick="showSacrament('anointing')">
+          <div class="card-icon">🕯️</div>
+          <div class="card-title">Anointing of the Sick</div>
+          <div class="card-desc">Christ's healing touch extended to those who suffer in body and in spirit.</div>
+          <a class="card-link" href="#">Explore Anointing →</a>
+        </div>
+        <div class="sacrament-card fade-in" onclick="showSacrament('holyorders')">
+          <div class="card-icon">✝️</div>
+          <div class="card-title">Holy Orders</div>
+          <div class="card-desc">The sacred calling of bishops, priests, and deacons to serve and lead God's people.</div>
+          <a class="card-link" href="#">Explore Holy Orders →</a>
+        </div>
+        <div class="sacrament-card fade-in" onclick="showSacrament('matrimony')">
+          <div class="card-icon">💍</div>
+          <div class="card-title">Matrimony</div>
+          <div class="card-desc">The covenant of love between a man and woman, reflecting Christ's love for the Church.</div>
+          <a class="card-link" href="#">Explore Matrimony →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY SACRAMENTS -->
+  <section class="why-section">
+    <div class="container">
+      <div class="section-label" style="color:var(--gold-light)">Relevance Today</div>
+      <h2 class="section-title" style="color:var(--white)">Why the Sacraments Matter Today</h2>
+      <p class="section-sub" style="color:rgba(254,252,248,0.65); margin-bottom:2.5rem">In a world of noise and distraction, the sacraments offer something radical: an encounter with the living God.</p>
+      <div class="why-grid">
+        <div class="why-card fade-in">
+          <div class="why-icon">🌱</div>
+          <h3>They Ground Your Faith</h3>
+          <p>The sacraments connect abstract belief to concrete moments — water, oil, bread, rings — making faith something you can see, touch, and taste.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-icon">🤝</div>
+          <h3>They Build Community</h3>
+          <p>Received in community, the sacraments remind us that following Christ is never a solitary journey. We are the Body of Christ together.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-icon">⚡</div>
+          <h3>They Give Real Grace</h3>
+          <p>These aren't symbols alone — they truly confer the grace they signify, transforming the person who receives them with God's own life.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-icon">🧭</div>
+          <h3>They Guide Life Stages</h3>
+          <p>From birth to death, the sacraments accompany every major moment of human life, sanctifying ordinary experience with divine meaning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-label">Student Voices</div>
+      <h2 class="section-title">Thomasians Encountering Christ</h2>
+      <p class="section-sub">Real stories from students who found grace in the sacraments.</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-in">
+          <p class="quote">"Going to Confession for the first time in years felt terrifying — but walking out, I felt lighter than I had in a long time. The priest's words reminded me that God had already forgiven me before I even walked in."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">M</div>
+            <div>
+              <div class="author-name">Maria Santos</div>
+              <div class="author-info">3rd Year, Nursing · UST Legazpi</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <p class="quote">"I used to think Mass was just routine. Then our theology professor explained the Eucharist more deeply — now every Sunday I feel like I'm sitting at the table with Jesus. It changed everything."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">J</div>
+            <div>
+              <div class="author-name">Jose Reyes</div>
+              <div class="author-info">2nd Year, Engineering · UST Legazpi</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <p class="quote">"When my lolo was anointed before his surgery, I saw him transform — his fear turned to peace. I finally understood what it means when we say the sacraments carry real grace."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">A</div>
+            <div>
+              <div class="author-name">Ana Dela Cruz</div>
+              <div class="author-info">4th Year, Education · UST Legazpi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem">
+        <a class="btn btn-gold" href="#" onclick="showPage('thomasian')">More Stories →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>☩ Living Sacraments</h3>
+        <p>A digital faith guide created for Thomasians at UST Legazpi — helping students encounter Christ through the seven sacraments.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Sacraments</h4>
+        <ul>
+          <li><span onclick="showSacrament('baptism')">Baptism</span></li>
+          <li><span onclick="showSacrament('eucharist')">Eucharist</span></li>
+          <li><span onclick="showSacrament('confirmation')">Confirmation</span></li>
+          <li><span onclick="showSacrament('reconciliation')">Reconciliation</span></li>
+          <li><span onclick="showSacrament('anointing')">Anointing of the Sick</span></li>
+          <li><span onclick="showSacrament('holyorders')">Holy Orders</span></li>
+          <li><span onclick="showSacrament('matrimony')">Matrimony</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><span onclick="showPage('home')">Home</span></li>
+          <li><span onclick="showPage('thomasian')">Thomasian Corner</span></li>
+          <li><span onclick="showPage('about')">About</span></li>
+          <li><span onclick="showPage('feedback')">Feedback</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><span>UST Legazpi Campus</span></li>
+          <li><span>Legazpi City, Albay</span></li>
+          <li><span>Campus Ministry Office</span></li>
+          <li><a href="mailto:ministry@ustlegazpi.edu.ph">ministry@ustlegazpi.edu.ph</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Living Sacraments · UST Legazpi Campus Ministry</span>
+      <span style="color:var(--gold);font-size:0.9rem">Veritas in Caritate ✦</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SACRAMENTS HUB PAGE
+═══════════════════════════════════════ -->
+<div id="page-sacraments" class="page">
+  <section class="sac-hero">
+    <button class="back-btn" onclick="showPage('home')">← Back to Home</button>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.5rem);color:var(--white);margin-bottom:1rem">The Seven Sacraments</h1>
+    <p style="color:rgba(254,252,248,0.7);max-width:560px;margin:0 auto">Choose a sacrament to explore its meaning, Scripture, symbols, and how to encounter Christ through it today.</p>
+  </section>
+  <section style="padding:3rem 1.5rem;background:var(--white)">
+    <div class="container">
+      <div class="cards-grid">
+        <div class="sacrament-card fade-in" onclick="showSacrament('baptism')">
+          <div class="card-icon">💧</div>
+          <div class="card-title">Baptism</div>
+          <div class="card-desc">Sacrament of Initiation — New life in Christ through water and the Spirit.</div>
+          <a class="card-link" href="#">Explore →</a>
+        </div>
+        <div class="sacrament-card fade-in" onclick="showSacrament('eucharist')">
+          <div class="card-icon">🍞</div>
+          <div class="card-title">Eucharist</div>
+          <div class="card-desc">Source and Summit of Christian life — the Body and Blood of Christ.</div>
+          <a class="card-link" href="#">Explore →</a>
+        </div>
+        <div class="sacrament-card fade-in" onclick="showSacrament('confirmation')">
+          <div class="card-icon">🕊️</div>
+          <div class="card-title">Confirmation</div>
+          <div class="card-desc">Sealed with the Gift of the Holy Spirit for mission in the world.</div>
+          <a class="card-link" href="#">Explore →</a>
+        </div>
+        <div class="sacrament-card fade-in" onclick="showSacrament('reconciliation')">
+          <div class="card-icon">🙏</div>
+          <div class="card-title">Reconciliation</div>
+          <div class="card-desc">God's boundless mercy — healing the wounds of sin and restoring grace.</div>
+          <a class="card-link" href="#">Explore →</a>
+        </div>
+        <div class="sacrament-card fade-in" onclick="showSacrament('anointing')">
+          <div class="card-icon">🕯️</div>
+          <div class="card-title">Anointing of the Sick</div>
+          <div class="card-desc">Christ's healing presence for those who suffer in body and spirit.</div>
+          <a class="card-link" href="#">Explore →</a>
+        </div>
+        <div class="sacrament-card fade-in" onclick="showSacrament('holyorders')">
+          <div class="card-icon">✝️</div>
+          <div class="card-title">Holy Orders</div>
+          <div class="card-desc">The sacred call to serve as priest, deacon, or bishop in God's Church.</div>
+          <a class="card-link" href="#">Explore →</a>
+        </div>
+        <div class="sacrament-card fade-in" onclick="showSacrament('matrimony')">
+          <div class="card-icon">💍</div>
+          <div class="card-title">Matrimony</div>
+          <div class="card-desc">A covenant of love mirroring Christ's undying love for His Church.</div>
+          <a class="card-link" href="#">Explore →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SACRAMENT DETAIL PAGE (dynamic)
+═══════════════════════════════════════ -->
+<div id="page-sacrament-detail" class="page">
+  <div id="sacrament-content"></div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     THOMASIAN CORNER
+═══════════════════════════════════════ -->
+<div id="page-thomasian" class="page">
+  <section class="about-hero">
+    <button class="back-btn" onclick="showPage('home')">← Back to Home</button>
+    <h1>Thomasian Corner</h1>
+    <p>Stories, community, and campus life — faith lived out by Thomasians at UST Legazpi.</p>
+  </section>
+
+  <!-- Testimonials -->
+  <section style="padding:4rem 1.5rem;background:var(--white)">
+    <div class="container">
+      <div class="section-label">Student Voices</div>
+      <h2 class="section-title">Stories of Encounter</h2>
+      <p class="section-sub">Hear from fellow Thomasians about how the sacraments have shaped their lives.</p>
+      <div class="testimonials-grid" style="margin-bottom:2rem">
+        <div class="testimonial-card fade-in">
+          <p class="quote">"My Confirmation retreat at UST Legazpi changed me. I came in skeptical, but left with a deep sense that the Holy Spirit had claimed me — and that I had a mission."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">C</div>
+            <div><div class="author-name">Carlo Mendoza</div><div class="author-info">2nd Year, Tourism · UST Legazpi</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <p class="quote">"I volunteer at Mass now as a lector. Every time I read the Gospel aloud, I feel like I'm handing the Word directly to my classmates. It's sacred in a way I never expected."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">I</div>
+            <div><div class="author-name">Issa Bautista</div><div class="author-info">3rd Year, Business · UST Legazpi</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <p class="quote">"When I was hospitalized, the campus chaplain came to anoint me. That moment of prayer in a hospital bed was the closest I've ever felt to God."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">R</div>
+            <div><div class="author-name">Rico Garcia</div><div class="author-info">4th Year, Medicine · UST Legazpi</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <p class="quote">"The first time I received Communion after returning to the Church — after years away — I wept. No shame, just gratitude. The Eucharist welcomed me home."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">L</div>
+            <div><div class="author-name">Luz Villanueva</div><div class="author-info">1st Year, Psychology · UST Legazpi</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <p class="quote">"I struggled with whether to enter the priesthood. A retreat here helped me discern. The sacrament of Holy Orders isn't just for priests — it taught me about service for all."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">D</div>
+            <div><div class="author-name">Daniel Aquino</div><div class="author-info">4th Year, Philosophy · UST Legazpi</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <p class="quote">"Our campus Baptism renewal during Holy Week was breathtaking. Renewing my vows alongside 200 classmates reminded me: I'm not alone in this faith."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">P</div>
+            <div><div class="author-name">Patricia Lim</div><div class="author-info">3rd Year, Architecture · UST Legazpi</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section style="padding:4rem 1.5rem;background:var(--cream)">
+    <div class="container">
+      <div class="section-label">Video Testimonials</div>
+      <h2 class="section-title">Hear It Firsthand</h2>
+      <p class="section-sub" style="margin-bottom:2.5rem">Watch Thomasians share their sacramental experiences in their own words.</p>
+      <div class="video-placeholder" onclick="alert('Video testimonials coming soon! Check back with the Campus Ministry Office.')">
+        <div class="play">▶</div>
+        <h4>Thomasian Faith Stories</h4>
+        <p>Click to watch video testimonials from UST Legazpi students</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Campus Ministry -->
+  <section style="padding:4rem 1.5rem;background:var(--white)">
+    <div class="container">
+      <div class="section-label">Campus Ministry</div>
+      <h2 class="section-title">Get Involved at UST Legazpi</h2>
+      <p class="section-sub">The Campus Ministry Office offers programs and communities for students seeking to grow in faith.</p>
+      <div class="ministry-grid">
+        <div class="ministry-card fade-in">
+          <div class="min-icon">🎵</div>
+          <h3>Praise & Worship Team</h3>
+          <p>Lead the community in song and music ministry during campus Masses and retreats.</p>
+        </div>
+        <div class="ministry-card fade-in">
+          <div class="min-icon">📖</div>
+          <h3>Bible Study Groups</h3>
+          <p>Weekly gatherings to break open Scripture and discuss faith in the context of student life.</p>
+        </div>
+        <div class="ministry-card fade-in">
+          <div class="min-icon">🕊️</div>
+          <h3>Confirmation Retreat Team</h3>
+          <p>Help prepare younger students for the sacrament of Confirmation through peer ministry.</p>
+        </div>
+        <div class="ministry-card fade-in">
+          <div class="min-icon">🤝</div>
+          <h3>Social Action Ministry</h3>
+          <p>Living the sacraments outwardly through service to the poor and marginalized in Albay.</p>
+        </div>
+        <div class="ministry-card fade-in">
+          <div class="min-icon">🙏</div>
+          <h3>Eucharistic Ministry</h3>
+          <p>Serve as lectors, acolytes, and extraordinary ministers of the Eucharist at campus Masses.</p>
+        </div>
+        <div class="ministry-card fade-in">
+          <div class="min-icon">💬</div>
+          <h3>Spiritual Direction</h3>
+          <p>One-on-one sessions with the campus chaplain to discern God's will for your life.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section style="padding:4rem 1.5rem;background:var(--cream)">
+    <div class="container">
+      <div class="section-label">Gallery</div>
+      <h2 class="section-title">Faith in Community</h2>
+      <p class="section-sub" style="margin-bottom:2rem">Moments of grace captured from UST Legazpi campus life.</p>
+      <div class="gallery-grid">
+        <div class="gallery-item">⛪<div class="gallery-label">Holy Week Mass</div></div>
+        <div class="gallery-item">🕯️<div class="gallery-label">Easter Vigil</div></div>
+        <div class="gallery-item">🤲<div class="gallery-label">Prayer Gathering</div></div>
+        <div class="gallery-item">📿<div class="gallery-label">Rosary Walk</div></div>
+        <div class="gallery-item">🎓<div class="gallery-label">Baccalaureate Mass</div></div>
+        <div class="gallery-item">🕊️<div class="gallery-label">Confirmation Day</div></div>
+        <div class="gallery-item">🍞<div class="gallery-label">First Communion</div></div>
+        <div class="gallery-item">🌿<div class="gallery-label">Ash Wednesday</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════
+     ABOUT PAGE
+═══════════════════════════════════════ -->
+<div id="page-about" class="page">
+  <section class="about-hero">
+    <button class="back-btn" onclick="showPage('home')">← Back to Home</button>
+    <h1>About This Project</h1>
+    <p>The story behind Living Sacraments — why it was made, and who it's for.</p>
+  </section>
+
+  <section style="padding:4rem 1.5rem;background:var(--white)">
+    <div class="container">
+      <div class="content-block">
+        <div class="content-text">
+          <div class="section-label">Project Background</div>
+          <h2 class="section-title">Born from Faith, Built for Students</h2>
+          <p>Living Sacraments was developed as a collaborative project between UST Legazpi's Campus Ministry Office and theology students, responding to a simple observation: many Catholic students have received the sacraments but struggle to connect them meaningfully to daily life.</p>
+          <p>In an age of social media, short attention spans, and increasing religious skepticism among youth, we asked: How can we present the richness of Catholic sacramental theology in a way that is beautiful, accessible, and genuinely transformative?</p>
+          <p>The answer was this digital guide — combining solid theology, student voices, reflective prompts, and clean design to create an encounter, not just information.</p>
+        </div>
+        <div>
+          <div class="theology-box">
+            <h3>✦ Our Vision</h3>
+            <p>To be a digital companion for Thomasians encountering Christ — helping students discover that the sacraments are not relics of the past but living realities present in every dimension of student life today.</p>
+          </div>
+          <div style="margin-top:1.5rem;padding:2rem;background:var(--cream);border-radius:var(--radius);border:1.5px solid rgba(201,168,76,0.15)">
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--navy);margin-bottom:0.75rem">✦ Our Mission</h3>
+            <p style="color:var(--text-mid);font-size:0.95rem">To educate, inspire, and accompany Catholic students in understanding and living out the seven sacraments — through clear teaching, peer witness, and prayerful reflection grounded in the Thomasian tradition.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:4rem 1.5rem;background:var(--cream)">
+    <div class="container">
+      <div class="section-label">Goals</div>
+      <h2 class="section-title">Objectives of This Guide</h2>
+      <p class="section-sub">Everything on this site serves one of these core purposes.</p>
+      <div class="objectives-list">
+        <div class="objective-item fade-in">
+          <div class="obj-num">01</div>
+          <h4>Educate</h4>
+          <p>Present the meaning, Scripture, and theology of each sacrament clearly for students.</p>
+        </div>
+        <div class="objective-item fade-in">
+          <div class="obj-num">02</div>
+          <h4>Inspire</h4>
+          <p>Through peer testimonials and saint stories, motivate students to engage with the sacraments.</p>
+        </div>
+        <div class="objective-item fade-in">
+          <div class="obj-num">03</div>
+          <h4>Reflect</h4>
+          <p>Offer structured reflection questions that help students connect faith to real life.</p>
+        </div>
+        <div class="objective-item fade-in">
+          <div class="obj-num">04</div>
+          <h4>Connect</h4>
+          <p>Link students to campus ministry, community, and opportunities to receive the sacraments.</p>
+        </div>
+        <div class="objective-item fade-in">
+          <div class="obj-num">05</div>
+          <h4>Accompany</h4>
+          <p>Be a faithful digital resource students can return to throughout their university years.</p>
+        </div>
+        <div class="objective-item fade-in">
+          <div class="obj-num">06</div>
+          <h4>Evaluate</h4>
+          <p>Gather student feedback to continually improve and deepen the resource's impact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:4rem 1.5rem;background:var(--navy)">
+    <div class="container" style="text-align:center">
+      <div class="section-label" style="color:var(--gold-light);justify-content:center">The Thomasian Tradition</div>
+      <h2 class="section-title" style="color:var(--white);max-width:640px;margin:0 auto 1.5rem">Rooted in St. Thomas Aquinas</h2>
+      <p style="color:rgba(254,252,248,0.7);max-width:560px;margin:0 auto 2rem;font-size:1.05rem">UST Legazpi belongs to the great tradition of the University of Santo Tomas — founded by the Dominican Order, committed to the pursuit of truth in charity. St. Thomas Aquinas wrote brilliantly on the sacraments in his Summa Theologiae, and it is in that spirit that we offer this guide: theology that illumines, faith that transforms.</p>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-style:italic;color:var(--gold-light)">"Veritas in Caritate"</div>
+      <div style="color:rgba(254,252,248,0.5);font-size:0.875rem;margin-top:0.5rem">Truth in Charity — Motto of the University of Santo Tomas</div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════
+     FEEDBACK PAGE
+═══════════════════════════════════════ -->
+<div id="page-feedback" class="page">
+  <section class="about-hero">
+    <button class="back-btn" onclick="showPage('home')">← Back to Home</button>
+    <h1>Student Feedback Survey</h1>
+    <p>Help us improve this resource. Your response takes less than 3 minutes.</p>
+  </section>
+
+  <section style="padding:4rem 1.5rem;background:var(--cream)">
+    <div class="container">
+      <div class="feedback-form" id="feedback-form">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--navy);margin-bottom:0.5rem">Share Your Experience</h3>
+        <p style="color:var(--text-mid);font-size:0.9rem;margin-bottom:2rem">All responses are anonymous unless you choose to share your name.</p>
+
+        <div class="form-group">
+          <label>Name (optional)</label>
+          <input type="text" placeholder="Your name">
+        </div>
+
+        <div class="form-group">
+          <label>Year & Course</label>
+          <select>
+            <option value="">Select your year level</option>
+            <option>1st Year</option>
+            <option>2nd Year</option>
+            <option>3rd Year</option>
+            <option>4th Year</option>
+            <option>Graduate Student</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>How well did you understand the sacraments BEFORE visiting this site?</label>
+          <div class="rating-group" id="before-rating">
+            <button class="rating-btn" onclick="selectRating(this,'before')">1 – Not at all</button>
+            <button class="rating-btn" onclick="selectRating(this,'before')">2 – A little</button>
+            <button class="rating-btn" onclick="selectRating(this,'before')">3 – Somewhat</button>
+            <button class="rating-btn" onclick="selectRating(this,'before')">4 – Fairly well</button>
+            <button class="rating-btn" onclick="selectRating(this,'before')">5 – Very well</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>How well do you understand the sacraments AFTER using this site?</label>
+          <div class="rating-group" id="after-rating">
+            <button class="rating-btn" onclick="selectRating(this,'after')">1 – Not at all</button>
+            <button class="rating-btn" onclick="selectRating(this,'after')">2 – A little</button>
+            <button class="rating-btn" onclick="selectRating(this,'after')">3 – Somewhat</button>
+            <button class="rating-btn" onclick="selectRating(this,'after')">4 – Fairly well</button>
+            <button class="rating-btn" onclick="selectRating(this,'after')">5 – Very well</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Which sacrament page was most helpful to you?</label>
+          <select>
+            <option value="">Select a sacrament</option>
+            <option>Baptism</option>
+            <option>Eucharist</option>
+            <option>Confirmation</option>
+            <option>Reconciliation</option>
+            <option>Anointing of the Sick</option>
+            <option>Holy Orders</option>
+            <option>Matrimony</option>
+            <option>All equally helpful</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Did this site inspire you to engage more actively with the sacraments?</label>
+          <div class="rating-group">
+            <button class="rating-btn" onclick="selectRating(this,'inspire')">Definitely yes</button>
+            <button class="rating-btn" onclick="selectRating(this,'inspire')">Somewhat</button>
+            <button class="rating-btn" onclick="selectRating(this,'inspire')">Not sure</button>
+            <button class="rating-btn" onclick="selectRating(this,'inspire')">Not really</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>What did you find most valuable about this site?</label>
+          <textarea placeholder="Share what helped you most — specific sections, features, or content..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>What would you like to see improved or added?</label>
+          <textarea placeholder="Your suggestions help us make this guide better for all Thomasians..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Any other reflections or comments?</label>
+          <textarea placeholder="Share anything else you'd like us to know..."></textarea>
+        </div>
+
+        <button class="btn btn-gold" style="width:100%;justify-content:center" onclick="submitFeedback()">Submit Feedback ✦</button>
+      </div>
+
+      <div class="form-success" id="form-success">
+        <div class="success-icon">✦</div>
+        <h3>Thank You, Thomasian!</h3>
+        <p>Your feedback has been received. May the sacraments continue to be a source of grace and encounter with Christ in your life.</p>
+        <div style="margin-top:0.5rem;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold);font-size:1.1rem">Veritas in Caritate</div>
+        <button class="btn btn-gold" style="margin-top:2rem" onclick="showPage('home')">← Back to Home</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SCROLL TOP -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
